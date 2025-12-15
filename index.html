@@ -2,24 +2,155 @@
 layout: default
 ---
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jan Henrik Straumsheim</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-133288353-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133288353-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'UA-133288353-1');
+    </script>
+    <style>
+      :root {
+        color-scheme: light;
+      }
 
-  gtag('config', 'UA-133288353-1');
-</script>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: #f6f6f4;
+        color: #121212;
+        font-family: 'Helvetica Neue', Helvetica, Arial, system-ui, -apple-system,
+          sans-serif;
+        letter-spacing: 0.01em;
+        -webkit-font-smoothing: antialiased;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .frame {
+        width: min(1040px, 100%);
+        padding: 56px clamp(24px, 4vw, 64px);
+      }
+
+      header {
+        margin-bottom: 64px;
+        border-bottom: 1px solid #dcdcd6;
+        padding-bottom: 32px;
+      }
+
+      h1 {
+        margin: 0 0 8px;
+        font-weight: 600;
+        font-size: clamp(36px, 5vw, 48px);
+        letter-spacing: -0.02em;
+      }
+
+      p.subtitle {
+        margin: 0;
+        font-size: clamp(18px, 2.4vw, 20px);
+        color: #4a4a46;
+      }
+
+      .content {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+        max-width: 760px;
+      }
+
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 20px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      .links a {
+        text-decoration: none;
+        color: inherit;
+        font-weight: 600;
+        position: relative;
+        padding-bottom: 4px;
+      }
+
+      .links a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background: currentColor;
+        transform-origin: left;
+        transform: scaleX(0);
+        transition: transform 180ms ease;
+      }
+
+      .links a:focus-visible,
+      .links a:hover {
+        outline: none;
+      }
+
+      .links a:hover::after,
+      .links a:focus-visible::after {
+        transform: scaleX(1);
+      }
+
+      .note {
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.6;
+        color: #2d2d29;
+      }
+
+      @media (max-width: 640px) {
+        body {
+          align-items: flex-start;
+        }
+
+        header {
+          margin-bottom: 40px;
+          padding-bottom: 24px;
+        }
+
+        .frame {
+          padding: 40px 24px 64px;
+        }
+      }
+    </style>
   </head>
-<body>
-<h2>Hello World</h2>
-  <ul>
-  <li><a href="https://www.linkedin.com/in/straumsheim" target="_blank">LinkedIn</li>
-  <li><a href="https://twitter.com/janhenrikdotcom" target="_blank">Twitter</li>
-  <li><a href="https://github.com/janhenrikdotcom" target="_blank">GitHub</li>
-</ul>
-</body>
+  <body>
+    <main class="frame" aria-labelledby="intro-title">
+      <header>
+        <h1 id="intro-title">Hello World</h1>
+        <p class="subtitle">A minimal corner of the web by Jan Henrik Straumsheim.</p>
+      </header>
+      <section class="content" aria-label="Links">
+        <p class="note">
+          I spend my time building, learning, and connecting with others across the
+          internet. You can find me in a few familiar places below.
+        </p>
+        <ul class="links">
+          <li><a href="https://www.linkedin.com/in/straumsheim" target="_blank" rel="noreferrer">LinkedIn</a></li>
+          <li><a href="https://twitter.com/janhenrikdotcom" target="_blank" rel="noreferrer">Twitter</a></li>
+          <li><a href="https://github.com/janhenrikdotcom" target="_blank" rel="noreferrer">GitHub</a></li>
+        </ul>
+      </section>
+    </main>
+  </body>
 </html>
